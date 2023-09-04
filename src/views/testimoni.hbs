@@ -1,0 +1,179 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tautan ke Bootstrap JavaScript (termasuk jQuery) -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/testimoni.css" />
+
+    <link rel="icon" href="image/123.jpeg" type="image/x-icon" />
+    <title>Taks Agung prayogi purba</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="image/logo-removebg-preview.png"
+            alt="logo"
+            width="60"
+            height="50"
+          />
+        </a>
+        <button
+          class="navbar-toggler bg-light align-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/add-project">Add Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="/testimoni">Testimoni</a>
+
+            </li>
+            <ul class="dropdown-menu bg-light">
+              <li><a class="dropdown-item text-light" href="/">Home</a></li>
+              <li><a class="dropdown-item text-light" href="/add-project">Add
+                  Project</a></li>
+              <li><a
+                  class="dropdown-item text-warning"
+                  href="/testimoni"
+                >Testimoni</a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-register"
+                >register </a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-login"
+                >Login</a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-logout"
+                >Logout</a></li>
+              <li><a class="dropdown-item text-light" href="/contact">Contact me</a></li>
+            </ul>
+
+          </ul>
+
+          <div class="d-flex justify-content-center">
+            <ul class="navbar-nav">
+              {{#if isLogin}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-danger active fw-semibold"
+                    href="#"
+                  >Hello, {{user}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="/from-logout">Logout</a>
+                </li>
+              {{else}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-light"
+                    href="/from-register"
+                  >Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="/from-login">Login</a>
+                </li>
+              {{/if}}
+              <a class="btn btn-danger btn-submit" href="/contact">Contact Me</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+    {{#if messages.success}}
+      <div class="alert alert-success" role="alert">
+        <div class="container">
+          {{messages.success}}
+        </div>
+      </div>
+    {{/if}}
+    <div>
+
+      <div class="container-testimonial">
+        <div class="testimonial-title">
+          <h1>My Testimonial</h1>
+          <h3>Rating </h3>
+          <div class="rating-testimonial">
+            <button onclick="ratingAll()">All
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button onclick="selectRating(1)">1
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button onclick="selectRating(2)">2
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button onclick="selectRating(3)">3
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button onclick="selectRating(4)">4
+              <i class="fa-solid fa-star"></i>
+            </button>
+            <button onclick="selectRating(5)">5
+              <i class="fa-solid fa-star"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <div id="not-found"></div>
+      <div class="testimonials" id="testimonials"></div>
+    </div>
+
+    <script src="../assets/js/testimoni.js"></script>
+
+  </body>
+
+</html>

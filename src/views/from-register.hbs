@@ -1,0 +1,175 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="image/123.jpeg" type="image/x-icon" />
+    <title>Taks Agung prayogi purba</title>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="image/logo-removebg-preview.png"
+            alt="logo"
+            width="60"
+            height="50"
+          />
+        </a>
+        <button
+          class="navbar-toggler bg-light align-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/add-project">Add Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/testimoni">Testimoni</a>
+
+            </li>
+            <ul class="dropdown-menu bg-light">
+              <li><a class="dropdown-item text-warning" href="/">Home</a></li>
+              <li><a class="dropdown-item text-light" href="/add-project">Add
+                  Project</a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/testimoni"
+                >Testimoni</a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-register"
+                >register </a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-login"
+                >Login</a></li>
+              <li><a
+                  class="dropdown-item text-light"
+                  href="/from-logout"
+                >Logout</a></li>
+              <li><a class="dropdown-item text-light" href="/contact">Contact me</a></li>
+            </ul>
+
+          </ul>
+
+          <div class="d-flex justify-content-center">
+            <ul class="navbar-nav me-auto mb-2 ms-5 mb-lg-0">
+              {{#if isLogin}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-danger active fw-semibold"
+                    href="#"
+                  >Hello, {{user}}</a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a class="nav-link text-light" href="/from-logout">Logout</a>
+                </li>
+              {{else}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-warning"
+                    href="/from-register"
+                  >Register</a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a class="nav-link text-light" href="/from-login">Login</a>
+                </li>
+              {{/if}}
+              <a class="btn btn-dark btn-submit ms-5" href="/contact">Contact Me</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header d-flex justify-content-center">
+              <h5>REGISTRASI TO YOUR ACCOUNT</h5>
+            </div>
+            <div class="card-body">
+              <form action="/from-register" method="post">
+                <div class="form-group">
+                  <label for="name">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <div class="mt-5 d-flex justify-content-end">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                  >Register</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
